@@ -1,4 +1,4 @@
-# Php-basic-blog
+# Php Basic Blog
 <br/>
 
 ## Home Page
