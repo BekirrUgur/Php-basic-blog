@@ -50,5 +50,7 @@
 ### -Mobile Compatibility 
 ### -Empty input control
 
+<br/>
+
 ## Date of Update
 ### New features will be added on Monday every week (29.06.2020)
