@@ -1,14 +1,20 @@
 # Php-basic-blog
 <br/>
+
 ## Home Page
+
 <br/>
 <img src="https://github.com/BekirrUgur/Php-basic-blog/blob/master/Pictures/1.jpeg" width="1000px">
 <br/>
+
 ## About us
+
 <br/>
 <img src="https://github.com/BekirrUgur/Php-basic-blog/blob/master/Pictures/2.jpeg" width="1000px">
 <br/>
+
 ## Login
+
 <br/>
 <img src="https://github.com/BekirrUgur/Php-basic-blog/blob/master/Pictures/3.jpeg" width="1000px">
 <br/>
