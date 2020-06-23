@@ -1,9 +1,9 @@
 <?php
 session_start();
 $link = mysqli_connect("localhost","root","","blog");
-//Türkçe karakter kullanımı desteklemesi
+//Support for the use of Turkish characters
 $link -> set_charset("utf8");
-// Veri tabanı bağlantı kontrolü
+// Database connection check
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
@@ -27,7 +27,7 @@ if (mysqli_connect_errno()) {
 </head>
 <body>
 
-<!-- Üst menü kısmı -->
+<!-- Top menu section -->
 	<nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="index.php"><img class="logo" src="style/BEN.jpg"/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@ if (mysqli_connect_errno()) {
       <li class="nav-item">
         <a class="nav-link" href="profile.php">About Us</a>
       </li>
-	  <!-- Oturum kontrol edilerek açık/kapalı durumuna göre erişilebilen sayfalar-->
+	  <!-- Pages that can be entered according to open / closed status by controlling the session -->
 	  <?php if(isset($_SESSION["user"])){  ?>
 	  <li class="nav-item">
         <a class="nav-link" href="create.php">Create Posts</a>

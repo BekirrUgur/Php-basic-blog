@@ -2,21 +2,21 @@
 
 include("header.php");
 
-//butona tıklandığı zaman
+//When the button is clicked
 if (isset($_POST["fsubmit"])){
-	//İsim veya şifrenin dolu olup olmadığını kontrol eder
+	//Checks if the name or password is full
 	if($_POST["fname"]=="" || $_POST["fpassword"]=="" ){
 		
 
 		
 	}else{
-		//sql injectionlardan korunmak için alınan girdiyi başka bir değişkende tutma
+		//Keeping the input received in another variable to avoid SQL injections
 		$fname=mysqli_real_escape_string($link, $_POST["fname"]);
 		$fpassword=mysqli_real_escape_string($link, $_POST["fpassword"]);
-		//Elde edilen bilgiyi admin tablosuna ekler
+		//Adds the obtained information to the admin table
 		$sql="INSERT INTO admin (username, password) 
 		VALUES ('".$fname."', '".$fpassword."')";
-		//Form gönderme işleminin tekrar etmemesi için kayıt sonrası index sayfasına yönlendirme yapar
+		//Redirects to the index page after registration so as not to repeat the form submission process
 		if(mysqli_query($link, $sql)){
 			
 			header("Location:index.php");
@@ -32,7 +32,7 @@ if(isset($_POST["ssubmit"])){
 		
 		
 	}
-	//içeriğin dolululğunu kontrol eder
+	//Checks the fullness of the content
 	else if($_POST["spassword"]==""){
 		
 		
@@ -41,13 +41,13 @@ if(isset($_POST["ssubmit"])){
 	$sname = mysqli_real_escape_string($link,$_POST["sname"]);
 	$spassword = mysqli_real_escape_string($link,$_POST["spassword"]);
 	
-	//veri tabanından admin tablosundaki kullanıcı ve şifreyi alır
+	//Retrieves the user and password from the admin table from the database
 	$sql = "SELECT username, password FROM admin";
 	//veritabanına bağlantı
 	if($result = mysqli_query($link, $sql)){
 	
 		$row = mysqli_fetch_assoc($result);
-		//Şifre ve kullanıcı adının veri tabanı ile doğruluğunu kontrol eder
+		//Checks whether the password and username are correct with the database
 		if($row["password"]==$spassword && $row["username"]==$sname){
 			$_SESSION["user"]="admin";
 			header("Location:create.php");
@@ -66,7 +66,7 @@ if(isset($_POST["ssubmit"])){
 }
 
 ?>
-<!-- Üye giriş kısmı-->
+<!-- Member login section -->
 <form method="post">
 <h2 class="sign-in">Register</h2>
 <div class="fixed">
@@ -83,7 +83,7 @@ if(isset($_POST["ssubmit"])){
 <button type="submit" name="fsubmit" id="fbutton" class="btn btn-primary">Register</button>
 </form>
 
-<!-- Üye kaydolma kısmı-->
+<!-- Member registration section -->
 <form method="post">
 <h2 class="sign-in">Login</h2>
 <div class="fixed">

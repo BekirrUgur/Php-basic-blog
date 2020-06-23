@@ -5,11 +5,11 @@ include("header.php");
 ?>
 
 <?php
-//veritabanındaki posts tablosundan id ye göre seçiyor - DESC en yüksek id değerinden düşüğe doğru
+//Selects by id from posts table in database - DESC from highest id to low
 $sql = "SELECT * FROM posts ORDER BY id DESC";
-//görüntüleme için kalıp fonksiyon
+//Mold function for imaging
 $result = mysqli_query($link, $sql);
-//veritabanındaki değeri 0 dan fazlaysa yani doluysa veriyi al işlemini yapıyor
+//If the value in the database is more than 0, that is, it takes the process of getting the data.
 if(mysqli_num_rows($result)>0){
 	while($row = mysqli_fetch_assoc($result)){
 		

@@ -3,28 +3,28 @@ include("header.php");
 
 
 
-//butona tıklandığı zaman
+//When the button is clicked
 if (isset($_POST["submit"])){
-	//başlığın dolu olup olmadığını kontrol eder
+	//Checks if the title is full
 	if($_SESSION["user"]="admin"){
 	if($_POST["heading"]==""){
 		
 	
 		
 	}
-	//içeriğin dolululğunu kontrol eder
+	//Checks the fullness of the content
 	else if($_POST["text"]==""){
 		
 	
 		
 	}else{
-		//sql injectionlardan korunmak için alınan girdiyi başka bir değişkende tutma
+		//Keeping the input received in another variable to avoid SQL injections
 		$heading=mysqli_real_escape_string($link, $_POST["heading"]);
 		$text=mysqli_real_escape_string($link, $_POST["text"]);
-		//Elde edilen bilgiyi posts tablosuna ekler
+		//Adds the obtained information to the posts table
 		$sql="INSERT INTO posts (heading, text) 
 		VALUES ('".$heading."', '".$text."')";
-		//Form gönderme işleminin tekrar etmemesi için kayıt sonrası index sayfasına yönlendirme yapar
+		//Redirects to the index page after registration so as not to repeat the form submission process
 		if(mysqli_query($link, $sql)){
 			
 			header("Location:index.php");
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])){
 </div>
 <script type="text/javascript">
 
-// başlık ve içeriğin boş olması durumunda alertbox yaratır.
+// If the title and content are empty, it creates an alertbox.
 $("#cbutton").click(function(){
 	if($("#title").val()==""){
 		alert("Title cannot be empty!")
