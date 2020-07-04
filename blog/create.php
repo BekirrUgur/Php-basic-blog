@@ -41,7 +41,7 @@ if (isset($_POST["submit"])){
 <div class="container">
   <form method="post">
   <h2>Title</h2>
-  <input type="text" id="title" class="heading" name="heading" /><br/>
+  <input type="text" id="title" class="heading" name="heading" ><br/>
   <h2>Content</h2><br/>
   <textarea class="text" id="content" name="text"></textarea><br/>
   <button id="cbutton" type="submit" name="submit" class="btn btn-success">Send</button>

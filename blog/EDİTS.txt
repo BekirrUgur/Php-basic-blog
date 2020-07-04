@@ -1,0 +1,7 @@
+on the "index.php" i show on the id from database i am going to use it "id" for choose the posts from database after that i will delete and edit. i think i have to use it fix the problems 
+main helper "js" don't forgot it.
+i added a new "edit.php" its for edit to posts 
+thats needed:
+-Delete posts
+-change content
+-main edit area

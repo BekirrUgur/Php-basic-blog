@@ -52,12 +52,18 @@ if (mysqli_connect_errno()) {
         <a class="nav-link" href="user.php">Sign-in/Login</a>
       </li>
 	  <?php } ?>
+	   <?php if(isset($_SESSION["user"])){  ?>
+	  <li class="nav-item">
+        <a class="nav-link" href="edit.php">Edit Post</a>
+      </li>
+	   <?php } ?>
 	  <form method="post">
 	  <?php if(isset($_SESSION["user"])){  ?>
 	   <li class="nav-item">
         <a class="nav-link" href="exit.php">Exit Profile</a>
       </li>
 	  <?php } ?>
+	  
       </form>
 	</ul>
   </div>

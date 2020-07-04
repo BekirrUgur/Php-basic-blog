@@ -17,6 +17,7 @@ if(mysqli_num_rows($result)>0){
 		<!-- Her bir gönderinin yeni bir  metin kutusu içerisinde gösterilmesini sağlar -->
 		<div class="container">
 		<h2 style="text-align:center;" >'.$row["heading"].'</h2>
+		<b>Düzenleme numarası: </b>'.$row["id"].'
          <p>'.$row["text"].'</p>
 		</div>
 		';

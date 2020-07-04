@@ -43,7 +43,7 @@ if(isset($_POST["ssubmit"])){
 	
 	//Retrieves the user and password from the admin table from the database
 	$sql = "SELECT username, password FROM admin";
-	//veritabanına bağlantı
+    // Database connection
 	if($result = mysqli_query($link, $sql)){
 	
 		$row = mysqli_fetch_assoc($result);
